@@ -1,4 +1,5 @@
 import Navbar from "./components/Navbar"
+import NewTask from "./components/NewTask"
 import Sidebar from "./components/Sidebar"
 import Tasks from "./components/Tasks"
 
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <Sidebar />
       <Tasks />
+      <NewTask />
     </div>
   )
 }
