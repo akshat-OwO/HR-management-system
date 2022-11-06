@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { useState } from "react"
+import AddTask from "./components/AddTask"
 import Navbar from "./components/Navbar"
 import NewTask from "./components/NewTask"
 import Sidebar from "./components/Sidebar"
@@ -10,6 +11,7 @@ function App() {
 
   const [todos, setTodos] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [isAdding, setIsAdding] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -26,8 +28,9 @@ function App() {
       <Navbar />
       <Sidebar />
       <Tasks />
-      <NewTask />
+      <NewTask setIsAdding={setIsAdding} />
       {loading && <TaskList todos={todos} />}
+      {isAdding && <AddTask setIsAdding={setIsAdding} />}
     </div>
   )
 }
